@@ -42,10 +42,16 @@
                 .then((json) => {
                     // GeoJSONレイヤーを作成
                     L.geoJSON(json)
-                        .bindPopup((layer) => layer.feature.properties.P28_00４+L.geoJSON(json)
-                        .bindPopup((layer) => layer.feature.properties.P28_003)) // ポップアップで学校名を表示
-                        
+                        .bindPopup((layer) => layer.feature.properties.P28_00４) // ポップアップで学校名を表示
+                        .addTo(map);
                     
+                });
+            fetch('./P28-22_13.geojson') // 群馬県の学校データのGeoJSONを非同期読み込み
+                .then((res) => res.json())
+                .then((json) => {
+                    // GeoJSONレイヤーを作成
+                    L.geoJSON(json)
+                        .bindPopup((layer) => layer.feature.properties.P28_00３) // ポップアップで学校名を表示
                         .addTo(map);
                     
                 });
