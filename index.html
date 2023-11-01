@@ -45,6 +45,7 @@
                         .bindPopup((layer) => layer.feature.properties.P28_004) // ポップアップで学校名を表示
                         .addTo(map);
                 });
+            return layer.feature.properties.P28_004;
             }
             // GeoJSONレイヤーを作成
             fetch('./P28-22_13.geojson') // 群馬県の学校データのGeoJSONを非同期読み込み
