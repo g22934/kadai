@@ -40,9 +40,7 @@
             fetch('./P28-22_13.geojson') // 群馬県の学校データのGeoJSONを非同期読み込み
                 .then((res) => res.json())
                 .then((json) => {
-                    fetch('./P29-21_10.geojson') // 群馬県の学校データのGeoJSONを非同期読み込み
-                .then((res) => res.json())
-                .then((json) => {
+                    
                     // GeoJSONレイヤーを作成
                     L.geoJSON(json)
                         .bindPopup((layer) => layer.feature.properties.P28_004) // ポップアップで学校名を表示
