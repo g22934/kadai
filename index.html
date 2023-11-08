@@ -36,16 +36,8 @@
                 '<a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P29-v2_0.html">国土数値情報 - 学校データ</a>',
             );
          
-            // GeoJSONレイヤーを作成
-            fetch('./P28-22_13.geojson') // 群馬県の学校データのGeoJSONを非同期読み込み
-                .then((res) => res.json())
-                .then((json) => {
-                    
-                    // GeoJSONレイヤーを作成
-                    L.geoJSON(json)
-                        .bindPopup((layer) => layer.feature.properties.P28_004) // ポップアップで学校名を表示
-                        .addTo(map);
-                });
+
+            
              fetch('./P28-22_13.geojson') // 群馬県の学校データのGeoJSONを非同期読み込み
                 .then((res) => res.json())
                 .then((json) => {
